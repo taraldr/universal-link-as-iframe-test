@@ -9,29 +9,6 @@
   </head>
   <body>
 
-  <button id="button">
-    Open iframe
-  </button>
-
-  <br/>
-
-  <div style="border: 1px solid black;width:400px;height:200px;" id="target-div"></div>
-
-	<script>
-    const universalLinkUrl = `${window.location.origin}/universal-link.html`;
-    const targetDiv = document.getElementById("target-div");
-
-    document
-      .getElementById("button")
-      .addEventListener("click", () => {
-        const iframe = document.createElement("iframe");
-        iframe.className = "iframe";
-        iframe.id = "iframe";
-        iframe.src = universalLinkUrl;
-  
-        targetDiv.appendChild(iframe);
-        console.log("click");
-      });  
-  </script>
+		<h1>Iframe appswitch tester (subdomain with apple-app-site-association)</h1>
   </body>
 </html>    
