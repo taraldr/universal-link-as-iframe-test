@@ -18,8 +18,7 @@
   <div style="border: 1px solid black;width:400px;height:200px;" id="target-div"></div>
 
 	<script>
-    const url = "https://example.com";
-
+    const universalLinkUrl = `${window.location.origin}/universal-link.html`;
     const targetDiv = document.getElementById("target-div");
 
     document
@@ -28,7 +27,7 @@
         const iframe = document.createElement("iframe");
         iframe.className = "iframe";
         iframe.id = "iframe";
-        iframe.src = url;
+        iframe.src = universalLinkUrl;
   
         targetDiv.appendChild(iframe);
         console.log("click");
