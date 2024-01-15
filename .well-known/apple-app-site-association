@@ -1,0 +1,20 @@
+{
+   "applinks": {
+      "details": [
+         {
+            "appIDs": [ 
+               "BWQZX9732Z.no.bankid.BankID"
+            ],
+            "components": [
+               {
+                  "#": "no_universal_links",
+                  "exclude": true
+               },
+               {
+                  "/": "/universal-link.html"
+               }
+            ]
+         }
+      ]
+   }
+}
