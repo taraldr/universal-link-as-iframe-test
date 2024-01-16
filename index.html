@@ -46,7 +46,9 @@
           iframe.style.height = "100%";
           iframe.style.width = "100%";
 
-          targetDiv.innerHTML(iframe);
+          // Make it so that the targetDiv only contains one iframe at a time
+          targetDiv.innerHTML = "";
+          targetDiv.appendChild(iframe);
           console.log("click");
         });
 
@@ -60,7 +62,8 @@
           iframe.style.height = "100%";
           iframe.style.width = "100%";
 
-          targetDiv.innerHTML(iframe);
+          targetDiv.innerHTML = "";
+          targetDiv.appendChild(iframe);
           console.log("click");
         });
     </script>
