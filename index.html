@@ -12,9 +12,11 @@
 
     <p>Ready to open iframe.</p>
 
-    <button id="button-direct">Open iframe to universal link</button>
+    <button id="button-direct">Open universal link</button>
 
-    <button id="button-indirect">
+    <button id="button-iframe-direct">Open iframe to universal link</button>
+
+    <button id="button-iframe-indirect">
       Open iframe to collect interaction to open universal link
     </button>
 
@@ -25,23 +27,31 @@
       id="target-div"
     ></div>
     <script>
+      const universalLink =
+        "https://iframe-ul.dev1.aletheia-test.idtech.no/universal-link.html";
+
       const targetDiv = document.getElementById("target-div");
 
       document.getElementById("button-direct").addEventListener("click", () => {
-        const iframe = document.createElement("iframe");
-        iframe.className = "iframe";
-        iframe.id = "iframe";
-        iframe.src =
-          "https://iframe-ul.dev1.aletheia-test.idtech.no/universal-link.html";
-        iframe.style.height = "100%";
-        iframe.style.width = "100%";
-
-        targetDiv.appendChild(iframe);
-        console.log("click");
+        window.location.href = universalLink;
       });
 
       document
-        .getElementById("button-indirect")
+        .getElementById("button-iframe-direct")
+        .addEventListener("click", () => {
+          const iframe = document.createElement("iframe");
+          iframe.className = "iframe";
+          iframe.id = "iframe";
+          iframe.src = universalLink;
+          iframe.style.height = "100%";
+          iframe.style.width = "100%";
+
+          targetDiv.innerHTML(iframe);
+          console.log("click");
+        });
+
+      document
+        .getElementById("button-iframe-indirect")
         .addEventListener("click", () => {
           const iframe = document.createElement("iframe");
           iframe.className = "iframe";
@@ -50,7 +60,7 @@
           iframe.style.height = "100%";
           iframe.style.width = "100%";
 
-          targetDiv.appendChild(iframe);
+          targetDiv.innerHTML(iframe);
           console.log("click");
         });
     </script>
