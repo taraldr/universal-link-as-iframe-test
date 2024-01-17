@@ -20,7 +20,11 @@
       Open iframe to collect interaction to open universal link
     </button>
 
-    <button id="button-iframe-new-tab">Open iframe in new tab</button>
+    <button id="button-iframe-target-blank">
+      Open iframe (target="_blank")
+    </button>
+
+    <button id="button-iframe-target-top">Open iframe (target="_top")</button>
 
     <br />
 
@@ -77,9 +81,15 @@
         });
 
       document
-        .getElementById("button-iframe-new-tab")
+        .getElementById("button-iframe-target-blank")
         .addEventListener("click", () => {
           window.open(universalLink, "_blank");
+        });
+
+      document
+        .getElementById("button-iframe-target-top")
+        .addEventListener("click", () => {
+          window.open(universalLink, "_top");
         });
     </script>
   </body>
