@@ -20,6 +20,8 @@
       Open iframe to collect interaction to open universal link
     </button>
 
+    <button id="button-iframe-new-tab">Open iframe in new tab</button>
+
     <br />
 
     <div
@@ -72,6 +74,12 @@
           targetDiv.innerHTML = "";
           targetDiv.appendChild(iframe);
           console.log("click");
+        });
+
+      document
+        .getElementById("button-iframe-new-tab")
+        .addEventListener("click", () => {
+          window.open(universalLink, "_blank");
         });
     </script>
   </body>
