@@ -12,19 +12,21 @@
 
     <p>Ready to open iframe.</p>
 
-    <button id="button-direct">Open universal link</button>
+    <button id="button-direct">Open universal link (target="_self")</button>
+
+    <button id="button-iframe-target-blank">
+      Open universal link (target="_blank")
+    </button>
+
+    <button id="button-iframe-target-top">
+      Open universal link (target="_top")
+    </button>
 
     <button id="button-iframe-direct">Open iframe to universal link</button>
 
     <button id="button-iframe-indirect">
       Open iframe to collect interaction to open universal link
     </button>
-
-    <button id="button-iframe-target-blank">
-      Open iframe (target="_blank")
-    </button>
-
-    <button id="button-iframe-target-top">Open iframe (target="_top")</button>
 
     <br />
 
@@ -46,8 +48,20 @@
       const targetDiv = document.getElementById("target-div");
 
       document.getElementById("button-direct").addEventListener("click", () => {
-        window.location.href = universalLink;
+        window.open(universalLink, "_self");
       });
+
+      document
+        .getElementById("button-iframe-target-blank")
+        .addEventListener("click", () => {
+          window.open(universalLink, "_blank");
+        });
+
+      document
+        .getElementById("button-iframe-target-top")
+        .addEventListener("click", () => {
+          window.open(universalLink, "_top");
+        });
 
       document
         .getElementById("button-iframe-direct")
@@ -78,18 +92,6 @@
           targetDiv.innerHTML = "";
           targetDiv.appendChild(iframe);
           console.log("click");
-        });
-
-      document
-        .getElementById("button-iframe-target-blank")
-        .addEventListener("click", () => {
-          window.open(universalLink, "_blank");
-        });
-
-      document
-        .getElementById("button-iframe-target-top")
-        .addEventListener("click", () => {
-          window.open(universalLink, "_top");
         });
     </script>
   </body>
